@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ram from "../images/ram.png";
 const Home = () => {
 	return (
