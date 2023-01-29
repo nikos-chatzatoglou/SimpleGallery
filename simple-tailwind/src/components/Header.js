@@ -1,17 +1,25 @@
-function Header() {
+import { Link } from "react-router-dom";
+
+const Header = () => {
 	return (
-		<div class='p-4 w-full bg-black md:bg-midnight-green flex justify-between'>
-			<h1 class='font-sans text-3xl tracking-wider text-left text-dutch-white'>
-				J'zargo
-			</h1>
-			<div class='flex space-x-8 text-sm md:text-base text-cultured-white mr-4 '>
-				<button class='bg-persian-plum border-solid border text-cultured-white px-2 md:px-4 rounded-lg hover:bg-dutch-white'>
-					Bait
-				</button>
-				<a href='#'>About Us</a>
-				<a href='#'>Contact</a>
+		<>
+			<div className='p-4 w-full fixed bg-black md:bg-midnight-green flex justify-between items-center'>
+				<Link
+					to='/'
+					className='font-sedgwick text-4xl tracking-wider text-left text-dutch-white'
+				>
+					J'zargo
+				</Link>
+				<div className='flex md:text-base font-sedgwick text-cultured-white gap-6'>
+					<Link to='/about'>About Us</Link>
+					<Link to='/contact'>Contact</Link>
+					<Link to='/portfolio'>Porfolio</Link>
+					<button className='bg-persian-plum border-solid border text-cultured-white px-2 md:px-6 rounded-lg hover:bg-dutch-white'>
+						Bait
+					</button>
+				</div>
 			</div>
-		</div>
+		</>
 	);
-}
+};
 export default Header;
