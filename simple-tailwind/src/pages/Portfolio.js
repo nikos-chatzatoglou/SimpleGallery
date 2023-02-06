@@ -7,7 +7,7 @@ const Portfolio = () => {
 	];
 	return (
 		<>
-			<section className='bg-gradient-to-b from-dutch-white to-midnight-green h-screen'>
+			<section className='bg-gradient-to-b from-dutch-white to-midnight-green '>
 				<section className='text-4xl font-metalMania flex m-2 p-10 justify-center'>
 					<h1>Pictures from nature</h1>
 				</section>
