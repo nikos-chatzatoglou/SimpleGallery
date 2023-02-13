@@ -35,3 +35,10 @@ export const auth = getAuth();
 
 // Initialize storage
 export const storage = getStorage(app);
+
+// var data = {
+// 	name: "John Doe",
+// 	age: 30,
+// };
+
+// db.ref().set(data);
