@@ -1,6 +1,5 @@
-import { collection, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
-import { doc, getDoc, getDocs } from "firebase/firestore";
+import { collection, doc, addDoc, getDoc, getDocs } from "firebase/firestore";
 
 export const add_to_firebase = async () => {
 	try {
@@ -33,5 +32,4 @@ export const read_collection = async () => {
 	querySnapshot.forEach((doc) => {
 		data.push(doc.data());
 	});
-	console.log(data[1].Link);
 };

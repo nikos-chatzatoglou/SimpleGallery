@@ -5,13 +5,13 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { add_to_firebase, read_data, read_collection } from "./add_to_firebase";
+import {
+	add_to_firebase,
+	read_data,
+	read_collection,
+} from "./actions_from_firebase";
 
 const App = () => {
-	useEffect(() => {
-		return read_collection;
-	}, []);
-
 	return (
 		<>
 			<Router>
