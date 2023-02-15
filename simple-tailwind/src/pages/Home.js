@@ -22,12 +22,7 @@ const Home = () => {
 					</div>
 				</div>
 				<div className='flex justify-center items-center bg-auto w-full  flex-col'>
-					<img
-						src={
-							"https://firebasestorage.googleapis.com/v0/b/jzargo2-96846.appspot.com/o/12042159_10204704818006965_1670278508_n.jpg?alt=media&token=ba381067-d3f4-4e78-99eb-9e4c3d3f8cc6"
-						}
-						className=' w-96'
-					/>
+					<img src={ram} className=' w-96' />
 					<button className='mt-10 font-sedgwick text-3xl bg-gradient-to-r from-dutch-white to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-xl p-4'>
 						Take a look
 					</button>
