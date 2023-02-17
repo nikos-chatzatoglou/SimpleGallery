@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase";
+import Loader from "../components/Loader";
+import "yet-another-react-lightbox/styles.css";
+import Lightbox from "yet-another-react-lightbox";
 
 const Portfolio = () => {
 	const [data, setData] = useState([]);
+
 	const [selectedPhoto, setSelectedPhoto] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [index, setIndex] = useState(-1);
 
 	useEffect(() => {
 		async function fetchPhotos() {
@@ -14,11 +20,16 @@ const Portfolio = () => {
 				newData.push(doc.data());
 			});
 			setData(newData);
+			setLoading(false);
 		}
 		fetchPhotos();
 	}, []);
+
+	const slides = data.map((item) => ({ src: item.link }));
+
 	const handlePhotoClick = (photo) => {
 		setSelectedPhoto(photo);
+		setIndex();
 	};
 
 	const handleCloseModal = () => {
@@ -29,14 +40,19 @@ const Portfolio = () => {
 			<section className='text-4xl font-metalMania flex m-2 p-10 justify-center'>
 				<h1>Pictures from nature</h1>
 			</section>
-			<div className='container mx-auto space-y-2 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-4'>
+			{loading && <Loader />}
+			<div className='container mx-auto space-y-2 lg:space-y-0 lg:gap-2 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'>
 				{data.map((photo, index) => (
-					<div key={index} className='w-full rounded hover:shadow-2xl'>
+					<div
+						key={photo.id}
+						className=' rounded hover:shadow-2xl'
+						onClick={() => setIndex(index)}
+					>
 						<img
-							className='rounded-xl '
+							className='rounded-xl object-cover object-center lg:w-[16rem] lg:h-[16rem]'
 							src={photo.link}
 							alt={photo.title}
-							onClick={() => handlePhotoClick(photo)}
+							//onClick={() => handlePhotoClick(photo)}
 						/>
 					</div>
 				))}
@@ -56,6 +72,12 @@ const Portfolio = () => {
 					</div>
 				)}
 			</div>
+			<Lightbox
+				index={index}
+				open={index >= 0}
+				close={() => setIndex(-1)}
+				slides={slides}
+			/>
 		</section>
 	);
 };
