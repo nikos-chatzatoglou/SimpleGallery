@@ -7,7 +7,7 @@ import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-const Portfolio = () => {
+const Gallery = () => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [index, setIndex] = useState(-1);
@@ -62,4 +62,4 @@ const Portfolio = () => {
 	);
 };
 
-export default Portfolio;
+export default Gallery;

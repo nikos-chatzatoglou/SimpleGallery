@@ -24,7 +24,7 @@ const Home = () => {
 				</div>
 				<div className='flex justify-center items-center bg-auto w-full  flex-col'>
 					<img src={ram} className=' w-96' alt='ram' />
-					<Link to='./portfolio'>
+					<Link to='./gallery'>
 						<button className='mt-10 font-sedgwick text-3xl bg-gradient-to-r from-dutch-white to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-xl p-4'>
 							Take a look
 						</button>

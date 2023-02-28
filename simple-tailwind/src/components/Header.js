@@ -10,11 +10,9 @@ const Header = () => {
 				>
 					J'zargo
 				</Link>
-				<div className='hidden md:flex md:text-base font-sedgwick text-cultured-white gap-6'>
-					<Link to='/portfolio'>Portfolio</Link>
-					<button className='bg-persian-plum border-solid border text-cultured-white px-2 md:px-6 rounded-lg hover:bg-dutch-white'>
-						Bait
-					</button>
+				<div className='hidden md:flex md:text-base font-sedgwick text-dutch-white gap-6'>
+					<Link to='/'>Home</Link>
+					<Link to='/gallery'>Gallery</Link>
 				</div>
 				<div className='md:hidden flex justify-end'>
 					<button className='p-2'>

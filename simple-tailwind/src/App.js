@@ -1,8 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -14,7 +13,7 @@ const App = () => {
 				</div>
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
-					<Route path='/portfolio' element={<Portfolio />}></Route>
+					<Route path='/gallery' element={<Gallery />}></Route>
 				</Routes>
 			</Router>
 		</>
